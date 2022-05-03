@@ -281,7 +281,8 @@
 
 .main_link figure a {
     position: absolute;
-    top: 50%;
+    top: 200px;
+    /*50%였는데 박스크기에따라 위치기달라져서 고정시켜둠*/
     right: 45px;
     width: 60px;
     height: 60px;
@@ -292,6 +293,7 @@
     color: #fff;
     border-radius: 50%;
     text-transform: uppercase;
+    /*text 투명도 */
 
 }
 
