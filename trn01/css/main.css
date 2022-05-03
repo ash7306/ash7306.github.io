@@ -60,9 +60,13 @@
 
 .main_slider h3 {
     font-size: 60px;
-    font-weight: 900px;
+    font-weight: 900;
     margin: 0 0 30px 0;
     color: blue;
+    background: -webkit-linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -73,7 +77,7 @@
 }
 
 .main_slider .slick-dots {
-    padding: 30px;
+    padding: 30px 0 0 0;
     /*ul 박스 */
 }
 
@@ -92,4 +96,238 @@
 
 .main_slider .slick-dots button {
     display: none;
+}
+
+.main_banner .container {
+    height: 220px;
+    align-items: flex-end;
+}
+
+.main_banner {
+    transform: translateY(-50%);
+    /*y축으로 겹치게*/
+
+}
+
+.main_banner figure:hover {
+    height: 220px;
+    transition: 0.5s;
+}
+
+.main_banner figure {
+    /* figure는 .을 안찍음(태그, 클래스가 아님) */
+    display: flex;
+    /*자식들 에게 박스의 기능을 줌 */
+    flex: 1;
+    /* width: 16.66666% */
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    /*안에 있는 내용물을 가운데로*/
+    align-items: center;
+    height: 200px;
+
+}
+
+.main_banner figure:nth-child(1) {
+    background: #e7958f;
+
+}
+
+.main_banner figure:nth-child(2) {
+    background: #f3ca4f;
+}
+
+.main_banner figure:nth-child(3) {
+    background: #337688;
+}
+
+.main_banner figure:nth-child(4) {
+    background: #6fa376;
+}
+
+.main_banner figure a {
+    display: flex;
+    align-items: flex-end;
+    /* magine: top auto*/
+    justify-content: center;
+    /*쪼그라든걸 중앙으로 */
+    width: 100px;
+    height: 120px;
+    font-size: 13px;
+}
+
+.main_banner figure:nth-child(1) a {
+    background: url(../img/icon_set_w.png) no-repeat 0 0;
+}
+
+.main_banner figure:nth-child(1):hover a {
+    background: url(../img/icon_set_w.png) no-repeat -300px 0;
+    transition: 0.5s;
+}
+
+.main_banner figure:nth-child(2) a {
+    background: url(../img/icon_set_w.png) no-repeat -100px 0;
+}
+
+.main_banner figure:nth-child(3) a {
+    background: url(../img/icon_set_w.png) no-repeat -200px 0;
+}
+
+.main_banner figure:nth-child(4) a {
+    background: url(../img/icon_set_w.png) no-repeat -300px 0;
+}
+
+.main_banner .customer {
+    position: relative;
+    flex: 2;
+    /* width: 32.2222% */
+    text-align: right;
+    /*글자를 오른쪽으로 */
+    background: #f7f7f7;
+    padding: 50px 30px 50px 0;
+    height: 200px;
+}
+
+.main_banner .customer a {
+    display: block;
+    margin: 0 0 15px 0;
+    font-size: 38px;
+    color: #369;
+    font-weight: 700;
+}
+
+.main_banner .customer i {
+    position: absolute;
+    top: -29px;
+    right: 30px;
+    color: #fff;
+    background: #e7958f;
+    font-size: 38px;
+    padding: 10px;
+    border-radius: 50%;
+    /*상하좌우 축약됨*/
+}
+
+.main_link {
+    padding: 0 0 100px 0;
+    background: linear-gradient(to top, #f7f7f7 70%, transparent 30%);
+}
+
+.main_link h2 {
+    text-align: center;
+    margin: 0 0 50px 0;
+}
+
+.main_link h2::before {
+    content: "";
+    display: inline-block;
+    /*박스를 만들고 텍스트 속성도 줌*/
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.main_link h2::after {
+    content: "";
+    display: inline-block;
+    width: 80px;
+    height: 1px;
+    background: #f00;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+.main_link .container {
+    gap: 30px
+}
+
+.main_link li::before {
+    content: "\ea10";
+    font-family: xeicon !important;
+}
+
+.main_link figure {
+    position: relative;
+    flex: 1;
+    /*border-radius: 50px 0 0 0;
+    overflow: hidden;*/
+}
+
+.main_link img {
+    width: 100%;
+    margin: 0 0 30px 0;
+    /*그림과 텍스트를 띄움 */
+    border-radius: 50px 0 50px 0;
+}
+
+.main_link h3 {
+    font-size: 23px;
+    margin: 0 0 30px 0;
+}
+
+.main_link h3::after {
+    /*가상 선택자*/
+    content: "";
+    display: block;
+    /*박스는 만들지만 다른 박스랑 친하지 않음 */
+    width: 80px;
+    height: 1px;
+    background: #fd7e14;
+    margin: 15px 0;
+}
+
+.main_link figure a {
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    width: 60px;
+    height: 60px;
+    background: rgba(243, 202, 79, 0.5);
+    /* 색을 눌러 rgb로 바꾸고 뒤에 'a'추가 한뒤 0.5 추가 */
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    border-radius: 50%;
+    text-transform: uppercase;
+
+}
+
+.main_link figure a:hover {
+    background: rgba(243, 202, 79, 1);
+    transition: 00.5s;
+    border-radius: 5px;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer ul {
+    margin: 10px 0;
+}
+
+.footer ul>li {
+    display: inline-block;
+    /*flex는 부모, inline-block은 자식 */
+}
+
+.footer ul>li~li::before {
+    /*<li>사이 선*/
+    /*+바로 밑에 형제, ~은 맨앞에 자기자신은 빠지고*/
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 13px;
+    background: #333;
+    margin: 0 15px;
+    vertical-align: middle;
+}
+
+.footer address {
+    font-style: normal;
 }
