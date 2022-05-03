@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./trn01/css/reset.css">
+    <link rel="stylesheet" href="./trn01/css/slick.css">
+    <link rel="stylesheet" href="./trn01/css/main.css">
+    <style>
+        .T05 {
+            text-align: center;
+        }
+
+        .t05::before {
+            content: "";
+            display: inline-block;
+            width: 80px;
+            height: 1px;
+            background: #f00;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+        .t05::after {
+            content: "";
+            display: inline-block;
+            width: 80px;
+            height: 1px;
+            background: #f00;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+
+
+        li::after {
+            content: "\e91c";
+            font-family: xeicon !important;
+        }
+
+        li::before {
+            content: "\e91c";
+            font-family: xeicon !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="T05">
+        <section class="t05">Lorem, ipsum dolor.</section>
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+    </div>
+</body>
+
+</html>
