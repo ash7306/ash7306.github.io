@@ -10,6 +10,12 @@ $(function () {     //이 태그가 위 윈도우 명령문을 대신해서, 자
         vertical: true,             //슬라이드가 위로 가는 기능
         dots: true,                 //슬라이드 도트 클릭 기능
     })
+
+    $('.mopen').on('click', function () {
+        $('.gnb').toggleClass('on')
+        this.classList.toggle('on')
+
+    })
+
+
 })
-
-
