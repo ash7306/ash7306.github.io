@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*기본태그 pigure에 기본 디자인에 마진이붙어 있어서 gap이 먹지 않아서 초기화 해줌*/
+        }
+
+        body {
+            background: #333;
+        }
+
+        .responsive {
+            background: #f00;
+        }
+
+        .responsive span {
+            display: none;
+            /*공간을 다없애서 백그라운드가 들어갈 자리가 없게 함*/
+        }
+
+        .res02 {
+            display: flex;
+            gap: 20px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .res02 figure {
+            flex: 1;
+            background: #ff0;
+        }
+
+        nav {
+            background: #f00;
+        }
+
+        nav.on {
+            left: 0;
+        }
+
+        nav>ul {
+            display: flex;
+            justify-content: center;
+            line-height: 40px;
+            list-style: none;
+        }
+
+        nav>ul a {
+            display: block;
+            padding: 10px 40px;
+
+        }
+
+
+        .mopen {
+            display: none;
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            text-align: center;
+            line-height: 30px;
+
+        }
+
+        .mopen::before {
+            content: "O";
+        }
+
+        .mopen.on::before {
+            content: "X";
+        }
+
+        /*반응형 태그, if문(768px이하로 간다면 밑에 명령을 */
+        @media (max-width: 768px) {
+            .responsive {
+                background: #369;
+            }
+
+            .responsive span {
+                display: block;
+            }
+
+            .res02 {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: auto;
+                margin: 0 auto;
+            }
+
+            .res02 figure {
+                flex: 1;
+                background: #f00;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                background: #fff;
+                width: calc(100% - 90px);
+                height: 100vh;
+                /* 뷰포트의 가로사이즈 만큼*/
+                padding: 50px 15px;
+                transition: 0.5s;
+            }
+
+            nav>ul {
+                display: flex;
+                flex-direction: column;
+                /*포지션을 가지고 가로로*/
+                justify-content: center;
+                line-height: 40px;
+            }
+
+            nav>ul a {
+                display: block;
+                padding: 10 40px;
+                color: #333;
+            }
+
+            .mopen {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="responsive">
+        <h1>
+            <span>선택장애있음.</span>
+        </h1>
+    </div>
+
+    <div class="res02">
+        <figure>01</figure>
+        <figure>01</figure>
+        <figure>01</figure>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="">menu01</a></li>
+            <li><a href="">menu01</a></li>
+            <li><a href="">menu01</a></li>
+            <li><a href="">menu01</a></li>
+        </ul>
+    </nav>
+    <div class="mopen">
+
+    </div>
+    <script>
+        document.querySelector('.mopen').addEventListener('click', function () {
+            document.querySelector('nav').classList.toggle('on');
+            this.classList.toggle('on');
+        })
+    </script>
+</body>
+
+</html>
