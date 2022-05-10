@@ -252,12 +252,12 @@ nav>ul>li~li::before {
 
 
 
-/*////////////////////////////////////////////////////////////*/
 
+/*////////////////////////////연습////////////////////////////////*/
+/*
 #content01 {
     padding: 100px 0;
     text-align: center;
-
 
 }
 
@@ -284,7 +284,7 @@ nav>ul>li~li::before {
 }
 
 #content01 figure {
-    flex: 1;
+    width: 1200px;
     padding: 0 15px;
 }
 
@@ -311,10 +311,318 @@ nav>ul>li~li::before {
     margin: 20px 0 0 0;
     display: inline-block;
     /*보더. 테두리 설정을 변경하기 위해서 인라인-블락 필요함*/
+/*
     border: 1px solid #333;
-    padding: 10px 30px 10px 30px;
+padding: 10px 30px 10px 30px;
 }
 
 #content01 .container a:hover {
     background: #f00;
 }
+
+*/
+/*//////////////////////////////연습//////////////////////////////*/
+
+/*//////////////////////////////옛날방법//////////////////////////*/
+/* float을 쓰는 방법
+33.333333% (옛날방법)
+.basic {
+    padding: 100px 0;
+    background: #f00;
+    text-align: center;
+}
+
+.dtainer {
+    width: 1230px;
+    margin: 0 auto;
+}
+
+.dtainer::after {
+    content: "";
+    display: block;
+    clear: both;
+    /*애프터사용해서 콘텐트 넣어주고 블락으로 박스를 만든뒤
+    클리어 보쓰로 백그라운드를 가라앉게 해줌*/
+/*}
+
+.dtainer figure {
+    float: left;
+   
+    width: 33.33333%;
+    padding: 0 15px;
+}
+
+.dtainer figure img {
+    max-width: 100%;
+}
+*/
+/*//////////////////////////////옛날방법//////////////////////////*/
+
+
+
+/* reset.css에 max-width: 100%; 를 줘야함 (커줘봣자 100% )
+    부모에게서 기준을 받음 .콘테이너에 1200px 를 이미줬음*/
+.basic {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.basic .container {
+    gap: 30px;
+}
+
+section h2 {
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    letter-spacing: 10px;
+}
+
+section p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+}
+
+.basic figure {
+    flex: 1;
+
+}
+
+.basic figure .inbox {
+    overflow: hidden;
+    border-radius: 50%;
+    transition: 0.5s 0.5s;
+    margin: 0 0 30px 0;
+}
+
+.basic figure:hover .inbox {
+    border-radius: 52% 48% 52% 48% / 15% 82% 18% 85%;
+}
+
+
+.basic figure img {
+    transition: 0.5s;
+}
+
+.basic figure:hover img {
+    transform: scale(1.5);
+}
+
+.basic figure strong {
+    display: block;
+    /*박스르 만들어서 다른 녀석들을 밑으로 내림*/
+    margin: 0 0 20px 0;
+}
+
+/*a는 인라인 속성을 가짐
+와이드, 패딩, 마진, 안먹음*/
+.basic figure a {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 5px 20px 8px 20px;
+}
+
+.basic figure a:hover {
+    background: #f00;
+}
+
+
+.fixed_bg {
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    background: url(../img/mainvisual01.jpg) no-repeat fixed center center/cover;
+    /* 커버 : 박스를 가득 채워라 //fixed == background-attachment: fixed; 축약형 */
+    filter: grayscale(1);
+    /*채도를 빼는것*/
+    /*background-attachment: fixed; 고정시키기*/
+
+}
+
+.fixed_bg i {
+    padding: 10px;
+    background: #333;
+    margin: 5px 0 0 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.fixed_bg span {
+    vertical-align: middle;
+    /*밑의 라인을 기준으로 가운데*/
+}
+
+.movie {
+    padding: 100px 0;
+
+}
+
+.movie .container {
+    gap: 50px;
+}
+
+.movie .container .dec {
+    flex: 1;
+    padding: 100px 0;
+}
+
+.movie .container figure {
+    flex: 1;
+
+}
+
+.movie video {
+    max-width: 100%;
+}
+
+.movie .dec i {
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+}
+
+.utube {
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+    filter: grayscale(1);
+
+}
+
+.utube i {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*///////////////////////slider///////////////////*/
+
+.slider {
+    padding: 100px 0;
+    text-align: center;
+
+}
+
+.slider .container {
+    gap: 30px
+}
+
+.visual .slick-dots {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+}
+
+.visual .slick-dots li {
+    display: inline-block;
+    /*글자의 속성, 박스를 가로로 둘 수 있게 해줌*/
+    width: 80px;
+    height: 5px;
+    background: #333;
+    margin: 0 5px;
+}
+
+.visual .slick-dots li::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: #f00;
+}
+
+.visual .slick-dots li.slick-active::after {
+    width: 100%;
+    transition: 3s;
+}
+
+.visual .slick-dots button {
+    display: none;
+}
+
+
+
+
+/*///////////////////////footer/////////////////////
+
+footer {
+    padding: 0 0 50px 0;
+    background: #333;
+    color: #f2f2f2;
+}
+
+footer .container {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 60px;
+}
+
+footer .container>* {
+    padding: 0 15px;
+}
+
+footer .top {
+    border-bottom: 1px solid #666;
+}
+
+footer .sns,
+footer .link {
+    margin-left: auto;
+}
+
+footer .link select {
+    color: #ddd;
+    font-size: 16px;
+}
+
+footer address {
+    font-style: normal;
+}
+
+footer dl {
+    display: flex;
+}
+
+footer dd {
+    padding: 0 15px 0 15px;
+    position: relative;
+}
+
+footer dd.ld {
+    font-weight: 800;
+}
+
+footer dd:first-child {
+    padding: 0 15px 0 0;
+}
+
+footer dd~dd:before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 12px;
+    background: #f2f2f2;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%)
+}
+
+footer i {
+    font-size: 22px;
+}
+
+footer select {
+    background: #333;
+    padding: 5px 15px;
+    border: 1px solid #666;
+} */
