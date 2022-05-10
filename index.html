@@ -12,12 +12,19 @@
             margin-left: 40px;
             font-size: 30px;
             right: 200;
+            text-shadow: 4px 2px 2px gray;
         }
 
         h2 {
+            margin: 0 0 -5px 0;
+        }
+
+        h3 {
+            margin: 0 0 0;
             margin-left: 20px;
             font-size: 20px;
             padding: 10px;
+
         }
 
         li {
@@ -28,11 +35,12 @@
             position: fixed;
             /*포지션 픽스드 = 스크롤바움직임 상관없이 최좌측상단에 고정*/
             width: 350px;
-            height: 200px;
+            height: 250px;
             left: -305px;
             top: 90px;
             transition: 0.5s;
             text-align: center;
+            font-weight: bolder;
             font-size: 30px;
             color: #369;
             background: -webkit-linear-gradient(-70deg, #a2facf 0%, #64acff 100%);
@@ -61,10 +69,11 @@
 
 <body>
     <h1>성훈's</h1>
+    <hr>
     <ol>
-        <hr>
+        <h2>연습목록</h2>
+        <h3>
 
-        <h2>
             <li>
                 <a href="t01.html" target="_blank">박스 크기 및 컬러 조정 - 220428</a>
             </li>
@@ -74,11 +83,11 @@
             <li>
                 <a href="t03.html" target="_blank">랜덤 더미 입력, class사용, position 및 hovor 활용 - 220428</a>
             </li>
-        </h2>
-
-        <hr>
-
-        <h2>
+        </h3>
+    </ol>
+    <hr>
+    <ol>
+        <h3>
             <li>
                 <a href="t04.html" target="_blank">백그라운드 활용(이미지 및 위치조정) - 220502</a>
             </li>
@@ -93,20 +102,29 @@
             </li>
             <li>
                 <a href="t08.html" target="_blank">쇼핑몰 팝업창 만들기(opacity, visibility), 박스 테두리 넣기(hover::before,after)
-                    -
-                    220506</a>
+                    - 220506</a>
             </li>
             <li>
                 <a href="t09.html" target="_blank">Js를 사용한 다양한 팝업창들 만들기($(this)사용하기} - 220506</a>
             </li>
-        </h2>
+        </h3>
     </ol>
+    <hr>
+    <ul>
+        <h2>홈페이지연습</h2>
+        <h3>
+            <li>
+                <a href="/trn01/index.html" target="_blank">trn01(부산청소)</a>
+            </li>
+            <li>
+                <a href="/trn02/index.html" target="_blank">trn02(JEWELLERY COLLECTION)</a>
+            </li>
+        </h3>
+    </ul>
     <div class="side_banner">
         <div id="current_date"></div>
         <button>
-
             <i class="xi-arrow-right"></i>
-
         </button>
     </div>
     <script src="./trn01/js/jquery-1.12.4.min.js">
@@ -115,16 +133,20 @@
         $('.side_banner button').on('click', function () {
             $(this).parent().toggleClass('on')
         });
-
-
     </script>
     <script>
         date = new Date();
         year = date.getFullYear();
         month = date.getMonth() + 1;
         day = date.getDate();
-        document.getElementById("current_date").innerHTML = "Today <br/>" + year + "년 <br/>" + month + "월 <br/>" + day + "일 <br/>";
+        week = date.getDay();
+        var week = new Array('일', '월', '화', '수', '목', '금', '토');
+        document.getElementById("current_date").innerHTML = "Today <br/>" + year + "년 <br/>" + month + "월 <br/>" + day + "일 <br/>" + week[date.getDay()] + "요일";
     </script>
+
+
+
+
 
     <!--도움주신분들 : rach0209 , jeoninha -->
 </body>
