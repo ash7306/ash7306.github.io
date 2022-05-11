@@ -51,11 +51,36 @@ $(function () {
 
 
 
+    $('.product_slider').slick({
+        slidesToShow: 5,
+        centerMode: true,
+        arrows: false,
+        /*prev,next 버튼 끄기*/
+        dots: true,
+        autoplay: true,
+
+    });
 
 
+    $('.product_list .s_left').on('click', function () {
+        $('.product_slider').slick('slickPrev');
+    });
 
+    $('.product_list .s_right').on('click', function () {
+        $('.product_slider').slick('slickNext');
+    });
 
+    $('.tab_link>li').on('click', function () {
+        var idx = $(this).index();
+        $(this).addClass('on').siblings().removeClass('on');
+        $('.tab_content>li').eq(idx).addClass('on').siblings().removeClass('on');
+        //eq:엔스오브타입(몇번쨰 인지==nth child) removeClass:붙였던걸 때냄
+    })
 
+    $('.footer #link').on('change', function () {
+        var lik = $(this).val();
+        if (lik) window.open(lik)
+    })
 
 
 
