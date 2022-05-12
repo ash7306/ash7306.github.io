@@ -58,7 +58,15 @@ $(function () {
         /*prev,next 버튼 끄기*/
         dots: true,
         autoplay: true,
-
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                }
+            }
+        ]
     });
 
 
@@ -75,12 +83,19 @@ $(function () {
         $(this).addClass('on').siblings().removeClass('on');
         $('.tab_content>li').eq(idx).addClass('on').siblings().removeClass('on');
         //eq:엔스오브타입(몇번쨰 인지==nth child) removeClass:붙였던걸 때냄
-    })
+    });
 
     $('.footer #link').on('change', function () {
         var lik = $(this).val();
         if (lik) window.open(lik)
-    })
+    });
+
+    $('.mbtn').on('click', function () {
+        $('nav').toggleClass('on');//nav에다가 on을 떗다붙엿다 하기
+        $(this).toggleClass('is-active');
+    });
+
+
 
 
 
