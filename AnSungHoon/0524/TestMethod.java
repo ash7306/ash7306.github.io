@@ -1,0 +1,24 @@
+public class TestMethod {
+	// 메소드 
+	public static void printRepeat() { // 메소드 머리(head)
+		// 메소드 몸통(body)
+		for	(int i = 0; i < 2; i++) {
+			System.out.println("반복 중");
+		}
+		int number = 100;
+		System.out.println("초기화한 변수 값: " + number);
+	}	
+	
+	public static void printHello() {
+		int number = 10;
+		System.out.println("점심 머먹지?");
+		System.out.println("초기화한 변수 값: " + number);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("프로그램 시작");
+		printRepeat();
+		printHello();		
+		System.out.println("프로그램 끝~");
+	}
+}
